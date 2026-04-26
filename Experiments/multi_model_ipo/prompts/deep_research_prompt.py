@@ -286,7 +286,7 @@ def create_deep_research_prompt(libb: LIBBmodel):
     ipo_universe = get_ipo_universe()
     formatted_ipo_universe = format_universe_for_prompt(ipo_universe)
 
-    ipo_tickers = pd.Series([c["tickers"] for c in ipo_universe])
+    ipo_tickers = pd.Series([c["ticker"] for c in ipo_universe])
     ipo_universe_eligibility = build_eligibility_series(ipo_tickers)
 
     portfolio_state = libb.portfolio
