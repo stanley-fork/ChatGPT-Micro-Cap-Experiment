@@ -34,7 +34,6 @@ def daily_flow(date):
         libb = LIBBmodel(f"Experiments/multi_model_ipo/artifacts/{model}", run_date=date)
         libb.process_portfolio()
         daily_report, prompt = prompt_daily_report(libb)
-        libb.save_additional_log("daily-prompt.txt")
         libb.analyze_sentiment(daily_report)
         libb.save_daily_update(daily_report)
 
