@@ -12,7 +12,6 @@ def _request_json(
     url: str,
     params: dict,
     api_key: str | None,
-    timeout: int = REQUEST_TIMEOUT,
 ) -> dict | list | None:
 
     global _last_polygon_call
@@ -36,7 +35,7 @@ def _request_json(
 
     try:
 
-        resp = session.get(url, params=params, timeout=timeout)
+        resp = session.get(url, params=params)
 
         if resp.status_code == 404:
             return None
