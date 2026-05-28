@@ -25,7 +25,7 @@ def weekly_flow(date):
     for model in MODELS:
         libb = LIBBmodel(f"Experiments/multi_model_ipo/artifacts/{model}", run_date=date)
         libb.process_portfolio()
-        deep_research_report, prompt = prompt_deep_research(libb, prompt_skeleton)
+        deep_research_report, prompt = prompt_deep_research(prompt_skeleton, libb)
         libb.save_prompt(prompt)
         libb.save_deep_research(deep_research_report)
 
